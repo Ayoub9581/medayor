@@ -4,7 +4,7 @@ img {
 
 .portfolio-header {
   position: relative;
-  background-image: url(img/header-bg.jpg);
+  background-color: #673AB7;
 }
 
 .site-header {
