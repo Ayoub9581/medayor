@@ -2,25 +2,34 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.conf import settings
 from django.utils import timezone
+from django.db.models.signals import pre_save, post_save
+from django.utils.text import slugify
+from services.models import Service
+from domains.models import Domain
 
-# Create your models here.
-WEB = 'web'
-DESKTOP = 'desktop'
-DESIGN = 'design'
-AUDIOVISUEL = 'audiov'
-DEFAULT = ''
-
+#
 class Project(models.Model):
-    DOMAINE_NAME = (
-            (WEB, 'Web development'),
-            (DESKTOP, 'Desktop Application'),
-            (DESIGN, 'Design '),
-            (AUDIOVISUEL, 'audiovisuel'),
-            (DEFAULT, ''),
-        )
-    project_name = models.CharField(max_length=256)
-    description = models.TextField()
-    annee  = models.DateField(auto_now=False, auto_now_add=False)
-    domaine = models.CharField(choices=DOMAINE_NAME,max_length=2,default=DEFAULT,)
-    medayor_user = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
-    timestamp = models.DateTimeField(auto_now=False,auto_now_add=True)
+    project_name         = models.CharField(max_length=255)
+    slug_project         = models.SlugField(unique=True)
+    description          = models.TextField()
+    annee                = models.DateField(auto_now=False, auto_now_add=False)
+    domaine_project      = models.ForeignKey(Domain, on_delete=models.CASCADE,default=1)
+    technologies_project = models.CharField(max_length=256)
+    updated              = models.DateTimeField(auto_now=True, auto_now_add=False)
+    timestamp            = models.DateTimeField(auto_now=False, auto_now_add=True)
+    medayor_user         = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
+
+    class Meta:
+        ordering = ['-timestamp','-updated']
+
+    def __str__(self):
+        return self.project_name
+
+    def __unicode__(self):
+        return self.project_name
+
+def pre_save_project(sender, instance, *args, **kwargs):
+    slug_project = slugify(instance.project_name)
+    instance.slug_project = slug_project
+
+pre_save.connect(pre_save_project, sender=Project)
