@@ -25,7 +25,7 @@ SECRET_KEY = 'chdx%v+wrzl7%1(n8)0-1ao=px)c5n@bw=ob#160h-5ghk1^ke'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -139,4 +139,4 @@ MEDIA_URL  = '/resources/'
 try:
     from local_settings import *
 except ImportError:
-    pass    
+    pass
