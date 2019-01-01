@@ -13,10 +13,12 @@ class Project(models.Model):
     slug_project         = models.SlugField(unique=True)
     description          = models.TextField()
     annee                = models.DateField(auto_now=False, auto_now_add=False)
-    domaine_project      = models.ForeignKey(Domain, on_delete=models.CASCADE,default=1)
+    domaine_project      = models.ForeignKey(Domain, on_delete=models.CASCADE)
     technologies_project = models.CharField(max_length=256)
+    image_project = models.ImageField(upload_to='projects',null=True,blank=True)
     updated              = models.DateTimeField(auto_now=True, auto_now_add=False)
     timestamp            = models.DateTimeField(auto_now=False, auto_now_add=True)
+    draft = models.BooleanField(default=False)
     medayor_user         = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
 
     class Meta:

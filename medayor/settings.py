@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'services.apps.ServicesConfig',
     'domains.apps.DomainsConfig',
+    'pagedown',
 ]
 
 MIDDLEWARE = [
