@@ -10,8 +10,6 @@ class Contact(models.Model):
     email = models.EmailField(max_length=254)
     note = models.TextField()
     adresse_ip = models.CharField(max_length=255,null=True,blank=True)
-    host_contact = models.CharField(max_length=255,null=True,blank=True)
-    server_name_contact = models.CharField(max_length=255,null=True,blank=True)
     http_user_agent = models.CharField(max_length=255,null=True,blank=True)
 
     def __str__(self):
