@@ -14,5 +14,7 @@ def send_contact(request):
             instance.http_user_agent =  request.META['HTTP_USER_AGENT']
             instance.save()
         return redirect('home')
+    else:
+        form = ContactForm()
     context = {'form':form,}
     return render(request,'contact/contact.html',context)
