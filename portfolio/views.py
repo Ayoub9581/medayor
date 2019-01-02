@@ -14,10 +14,10 @@ def launch(request):
     return render(request,'portfolio/launch.html')
 
 def projects(request):
-    projects = Project.objects.all()
-    nomdomain = projects.first()
-    context = {'projects':projects, 'nomdomain':nomdomain.domaine_project.nom_domaine,}
-    return render(request,'portfolio/projects.html',context)
+    # projects = Project.objects.all()
+    # nomdomain = projects.first()
+    # context = {'projects':projects, 'nomdomain':nomdomain.domaine_project.nom_domaine,}
+    return render(request,'portfolio/projects.html')
 
 def create_project(request):
     form = ProjectForm(request.POST or None, request.FILES or None)
