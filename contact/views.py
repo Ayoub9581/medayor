@@ -9,7 +9,7 @@ def send_contact(request):
         if form.is_valid():
             instance = form.save(commit=False)
             instance.adresse_ip = request.META['REMOTE_ADDR']
-            instance.host_contact =  request.META['HTTP_HOST']
+            instance.host_contact =  request.META['REMOTE_HOST']
             instance.server_name_contact =  request.META['SERVER_NAME']
             instance.http_user_agent =  request.META['HTTP_USER_AGENT']
             instance.save()
