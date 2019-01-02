@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'chdx%v+wrzl7%1(n8)0-1ao=px)c5n@bw=ob#160h-5ghk1^ke'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'services.apps.ServicesConfig',
     'domains.apps.DomainsConfig',
     'pagedown',
+    'medayor',
 ]
 
 MIDDLEWARE = [
