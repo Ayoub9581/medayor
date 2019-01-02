@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+<!-- {% load staticfiles %} -->
+{% block content %}
+       <div class="site-content">
+         <div class="mdl-grid site-max-width">
+           <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp page-content">
+             <div class="mdl-card__title">
+               <h1 class="mdl-card__title-text">Contact</h1>
+             </div>
+             <div class="mdl-card__media"><img class="article-image" src="{% static 'img/contact.png' %}" border="0" alt="Contact">
+             </div>
+             <div class="mdl-grid site-copy">
+               <div class="mdl-cell mdl-cell--12-col"><div class="mdl-card__supporting-text">
+ <p>Contactez notre équipe en utilisant le formulaire de contact ci-dessous :</p>
+ <form  method="POST" class="form-contact" action="{% url 'contact' %}"> {% csrf_token %}
+     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+       <div class="form-group form-float">
+
+           <div class="form-line">
+               {{form.name}}
+               <label class="form-label">Name</label>
+           </div>
+       </div>
+
+     </div>
+     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+       <div class="form-group form-float">
+           <div class="form-line">
+               {{form.email}}
+               <label class="form-label">Email</label>
+           </div>
+       </div>
+     </div>
+     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+
+       <div class="col-sm-12">
+             <div class="form-group">
+                   <div class="form-line">
+                     {{form.note}}
+                     <label class="form-label">Message</label>
+               </div>
+       </div>
+           </div>
+     </div>
+     <p>
+         <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">
+             Submit
+         </button>
+     </p>
+ </form>
+</div></div>
+             </div>
+           </div>
+         </div>
+       </div>
+
+
+
+{% endblock %}
