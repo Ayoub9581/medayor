@@ -1,167 +1,44 @@
-{% extends 'base.html' %}
-{% load staticfiles %}
-{% block content %}
 
-<div class="site-content">
-  <div class="mdl-grid site-max-width">
-    <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp page-content">
-      <div class="mdl-card__title">
-        <h1 class="mdl-card__title-text">Projects</h1>
-      </div>
-      <div class="mdl-card__media"><img class="article-image" src="{% static 'img/medayor/projects.png' %}" border="0" alt="About">
-      </div>
-    </div>
-  </div>
+  <!DOCTYPE html>
+  <html>
+  {% load staticfiles %}
+  <head>
+      <meta charset="UTF-8">
+      <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+      <title>404</title>
+      <!-- Favicon-->
+      <link rel="icon" href="../../favicon.ico" type="image/x-icon">
 
-  <div class="mdl-grid site-max-width">
-    <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp page-content">
-      <div class="row clearfix">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <div class="card">
-            <div class="header">
-              <h2>
-                Web Development
-                <small>With a bit of extra markup, it's possible to add any kind of HTML content like headings, paragraphs, or buttons into thumbnails.</small>
-              </h2>
-              <ul class="header-dropdown m-r--5">
-                <li class="dropdown">
-                  <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    <i class="material-icons">more_vert</i>
-                  </a>
-                  <ul class="dropdown-menu pull-right">
-                    <li><a href="javascript:void(0);">Action</a></li>
-                    <li><a href="javascript:void(0);">Another action</a></li>
-                    <li><a href="javascript:void(0);">Something else here</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-            <div class="body">
-              <div class="row">
-                {% for project in projects %}
-                <div class="col-sm-6 col-md-3">
-                  <div class="thumbnail">
-                    <img src="{{project.image_project.url}}">
-                    <div class="caption">
-                      <h3>{{project.project_name}}</h3>
-                      <p>
-                        {{ project.description|truncatechars_html:100 }}
-                      </p>
-                      <p>
-                        <a href="javascript:void(0);" class="btn btn-primary waves-effect" role="button">BUTTON</a>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                {% endfor %}
-              </div>
-            </div>
+      <!-- Google Fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+  <!-- <link href="../../fonts/material-icons.css" rel="stylesheet" type="text/css"> -->
+      <!-- Bootstrap Core Css -->
+      <link href="{% static 'node_modules/adminbsb/plugins/bootstrap/css/bootstrap.css' %}" rel="stylesheet">
+
+      <!-- Waves Effect Css -->
+      <link href="{% static 'node_modules/adminbsb/plugins/node-waves/waves.css' %}" rel="stylesheet" />
+
+      <!-- Custom Css -->
+      <link href="{% static 'node_modules/adminbsb/css/style.css' %}" rel="stylesheet">
+  </head>
+
+  <body class="four-zero-four">
+      <div class="four-zero-four-container">
+          <div class="error-code"><h2>bientôt disponible </h2></div><br/><br/<br/>
+          <div class="error-message">Projets en cours sur l archivage et la diffusion ...</div>
+          <div class="button-place">
+              <a href="{% url 'home' %}" class="btn btn-default btn-lg waves-effect">GO TO HOMEPAGE</a>
           </div>
-        </div>
       </div>
-    </div>
-  </div>
 
+      <!-- Jquery Core Js -->
+      <script src="{% static 'node_modules/adminbsb/plugins/jquery/jquery.min.js' %}"></script>
 
-  <div class="mdl-grid site-max-width">
-    <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp page-content">
-      <div class="row clearfix">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <div class="card">
-            <div class="header">
-              <h2>
-                Mobile Application
-                <small>With a bit of extra markup, it's possible to add any kind of HTML content like headings, paragraphs, or buttons into thumbnails.</small>
-              </h2>
-              <ul class="header-dropdown m-r--5">
-                <li class="dropdown">
-                  <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    <i class="material-icons">more_vert</i>
-                  </a>
-                  <ul class="dropdown-menu pull-right">
-                    <li><a href="javascript:void(0);">Action</a></li>
-                    <li><a href="javascript:void(0);">Another action</a></li>
-                    <li><a href="javascript:void(0);">Something else here</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-            <div class="body">
-              <div class="row">
-                {% for project in projects %}
-                <div class="col-sm-6 col-md-3">
-                  <div class="thumbnail">
-                    <img src="{{project.image_project.url}}">
-                    <div class="caption">
-                      <h3>{{project.project_name}}</h3>
-                      <p>
-                        {{ project.description|truncatechars_html:100 }}
-                      </p>
-                      <p>
-                        <a href="javascript:void(0);" class="btn btn-primary waves-effect" role="button">BUTTON</a>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                {% endfor %}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+      <!-- Bootstrap Core Js -->
+      <script src="{% static 'node_modules/adminbsb/plugins/bootstrap/js/bootstrap.js' %}"></script>
 
+      <!-- Waves Effect Plugin Js -->
+      <script src="{% static 'node_modules/adminbsb/plugins/node-waves/waves.js' %}"></script>
+  </body>
 
-  <div class="mdl-grid site-max-width">
-    <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp page-content">
-      <div class="row clearfix">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <div class="card">
-            <div class="header">
-              <h2>
-                AudioVisuel
-                <small>With a bit of extra markup, it's possible to add any kind of HTML content like headings, paragraphs, or buttons into thumbnails.</small>
-              </h2>
-              <ul class="header-dropdown m-r--5">
-                <li class="dropdown">
-                  <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    <i class="material-icons">more_vert</i>
-                  </a>
-                  <ul class="dropdown-menu pull-right">
-                    <li><a href="javascript:void(0);">Action</a></li>
-                    <li><a href="javascript:void(0);">Another action</a></li>
-                    <li><a href="javascript:void(0);">Something else here</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-            <div class="body">
-              <div class="row">
-                {% for project in projects %}
-                <div class="col-sm-6 col-md-3">
-                  <div class="thumbnail">
-                    <img src="{{project.image_project.url}}">
-                    <div class="caption">
-                      <h3>{{project.project_name}}</h3>
-                      <p>
-                        {{ project.description|truncatechars_html:100 }}
-                      </p>
-                      <p>
-                        <a href="javascript:void(0);" class="btn btn-primary waves-effect" role="button">BUTTON</a>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                {% endfor %}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-  {% endblock %}
+  </html>
