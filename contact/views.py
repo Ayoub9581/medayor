@@ -12,7 +12,7 @@ def send_contact(request):
             instance.adresse_ip = request.META.get('REMOTE_ADDR',None)
             instance.http_user_agent =  request.META.get('HTTP_USER_AGENT')
             instance.save()
-            messages.success(request,'merci de nous envoyer un message {}'.format(instance.name))
+            messages.success(request,'merci de nous envoyer un message <b>{}</b>'.format(instance.name))
         return redirect('home')
     else:
         form = ContactForm()
