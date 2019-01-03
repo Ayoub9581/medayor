@@ -4,7 +4,13 @@ img {
 
 .portfolio-header {
   position: relative;
-  background-color: #673AB7;
+  background-image: url(../img/headeer.png);
+}
+.portfolio-header .mdl-layout__header-row {
+  padding: 0;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .site-header {
