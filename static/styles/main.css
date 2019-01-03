@@ -1,16 +1,9 @@
 img {
   max-width: 100%;
 }
-
 .portfolio-header {
   position: relative;
-  background-image: url(../img/headeer.png);
-}
-.portfolio-header .mdl-layout__header-row {
-  padding: 0;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  background-color: #673AB7;
 }
 
 .site-header {
@@ -112,7 +105,7 @@ img {
   max-width: 700px;
 }
 
-.welcome-card > .mdl-card__title {
+.welcome-card>.mdl-card__title {
   color: #fff;
   height: 290px;
   background: url("../img/laptop.jpg") center/cover;
@@ -128,10 +121,10 @@ img {
 
 .event-card .mdl-card__title {
   -ms-flex-align: start;
-      align-items: flex-start;
+  align-items: flex-start;
 }
 
-.event-card .mdl-card__title > h4 {
+.event-card .mdl-card__title>h4 {
   margin-top: 0;
 }
 
@@ -140,16 +133,16 @@ img {
   display: flex;
   box-sizing: border-box;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
 }
 
-.event-card .mdl-card__actions > .material-icons {
+.event-card .mdl-card__actions>.material-icons {
   padding-right: 10px;
 }
 
 .event-card .mdl-card__title,
 .event-card .mdl-card__actions,
-.event-card .mdl-card__actions > .mdl-button {
+.event-card .mdl-card__actions>.mdl-button {
   color: #fff;
 }
 
@@ -203,7 +196,7 @@ img.article-image {
   background: url("../img/person2.jpg") center/cover;
 }
 
-.demo-card-image > .mdl-card__actions {
+.demo-card-image>.mdl-card__actions {
   height: 52px;
   padding: 16px;
   background: rgba(0, 0, 0, 0.3);

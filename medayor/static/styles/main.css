@@ -1,13 +1,9 @@
-/* img {
+img {
   max-width: 100%;
-} */
+}
 .portfolio-header {
   position: relative;
-  background-image: url("../img/headeer.png");
-  /* background-repeat: no-repeat; */
-  background-position: center;
-  background-size: cover;
-  /* background-color: #673AB7; */
+  background-color: #673AB7;
 }
 
 .site-header {
