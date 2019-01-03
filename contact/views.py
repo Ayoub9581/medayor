@@ -8,8 +8,8 @@ def send_contact(request):
     if request.method == 'POST':
         if form.is_valid():
             instance = form.save(commit=False)
-            instance.adresse_ip = request.META['REMOTE_ADDR']
-            instance.http_user_agent =  request.META['HTTP_USER_AGENT']
+            instance.adresse_ip = request.META.get('REMOTE_ADDR',None)
+            instance.http_user_agent =  request.META.get('HTTP_USER_AGENT')
             instance.save()
         return redirect('home')
     else:

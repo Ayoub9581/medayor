@@ -2,6 +2,11 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponseRedirect,HttpResponse
 from .models import Project
 from .forms import ProjectForm
+from django.conf import settings
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
+
 
 
 
@@ -11,7 +16,10 @@ def index(request):
     return render(request,'portfolio/index.html',context)
 
 def launch(request):
-    return render(request,'portfolio/launch.html')
+    if request.user.is_anonymous:
+        return render(request,'portfolio/launch.html')
+    else:
+        return render(request,'portfolio/index.html')
 
 def projects(request):
     # projects = Project.objects.all()
