@@ -2,6 +2,7 @@
 {% load staticfiles %}
 
 <html lang="en-US">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,17 +10,19 @@
   <title>MEDAYOR AGENCY</title>
   <meta name="description" content="Demo of Material design portfolio template by TemplateFlip.com." />
   <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;amp;lang=en" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" rel="stylesheet">
 
   <link href="{% static 'styles/main.css' %}" rel="stylesheet">
   <link href="{% static 'node_modules/adminbsb/plugins/bootstrap/css/bootstrap.css' %}" rel="stylesheet">
 
-<!-- Waves Effect Css -->
-<link href="{% static 'node_modules/adminbsb/plugins/node-waves/waves.css' %}" rel="stylesheet" />
+  <!-- Waves Effect Css -->
+  <link href="{% static 'node_modules/adminbsb/plugins/node-waves/waves.css' %}" rel="stylesheet" />
   <!-- Animation Css -->
   <link href="{% static 'node_modules/adminbsb/plugins/animate-css/animate.css' %}" rel="stylesheet" />
   <link href="{% static 'node_modules/adminbsb/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css' %}" rel="stylesheet" />
+  <link href="{% static 'node_modules/adminbsb/plugins/sweetalert/sweetalert.css' %}" rel="stylesheet" />
+
 
 
   <!-- Bootstrap Tagsinput Css -->
@@ -39,10 +42,10 @@
 </head>
 
 <body id="top">
+
+
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-    <a href="{% url 'contact' %}" id="contact-button"
-    class="mdl-button mdl-button--fab mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast mdl-shadow--4dp"><i
-        class="material-icons">mail</i></a>
+    <a href="{% url 'contact' %}" id="contact-button" class="mdl-button mdl-button--fab mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast mdl-shadow--4dp"><i class="material-icons">mail</i></a>
     <header class="mdl-layout__header mdl-layout__header--waterfall site-header portfolio-header">
       <div class="mdl-layout__header-row site-logo-row"><span class="mdl-layout__title">
           <div class="site-logo"></div><span class="site-description">MEDAYOR</span>
@@ -62,6 +65,7 @@
         <a class="mdl-navigation__link" href="{% url 'home' %}">Home</a>
         <a class="mdl-navigation__link" href="{% url 'services' %}">Services</a>
         <a class="mdl-navigation__link" href="{% url 'projects' %}">Projets</a>
+        <a class="mdl-navigation__link" href="{% url 'contact' %}">Contact</a>
         <!-- <a class="mdl-navigation__link" href="about.html">About</a>
         <a class="mdl-navigation__link" href="contact.html">Contact</a> -->
       </nav>
@@ -69,6 +73,19 @@
     <main class="mdl-layout__content">
       <div class="site-content">
         <div class="container">
+          {% if messages %}
+          {% for message in messages %}
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="body">
+              <div class="alert bg-green alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                {{message}}
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          {% endif %}
+
           {% block content %}
           {% endblock %}
         </div> <!--  End Container-->
@@ -86,43 +103,50 @@
     <script src="https://code.getmdl.io/1.3.0/material.min.js" defer></script>
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 
-  <script src="{% static 'node_modules/adminbsb/plugins/jquery/jquery.min.js' %}"></script>
-  <script src="{% static 'node_modules/marked/marked.min.js' %}"></script>
-  <!-- Bootstrap Core Js -->
-  <script src="{% static 'node_modules/adminbsb/plugins/bootstrap/js/bootstrap.js' %}"></script>
-  <!-- Select Plugin Js -->
-  <script src="{% static 'node_modules/adminbsb/plugins/bootstrap-select/js/bootstrap-select.js' %}"></script>
-  <script src="{% static 'node_modules/adminbsb/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js' %}"></script>
+    <script src="{% static 'node_modules/adminbsb/plugins/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'node_modules/marked/marked.min.js' %}"></script>
+    <script src="{% static 'node_modules/adminbsb/plugins/bootstrap-notify/bootstrap-notify.js' %}"></script>
 
-  <!-- Slimscroll Plugin Js -->
-  <script src="{% static 'node_modules/adminbsb/plugins/jquery-slimscroll/jquery.slimscroll.js' %}"></script>
-  <!-- Waves Effect Plugin Js -->
-  <script src="{% static 'node_modules/adminbsb/plugins/node-waves/waves.js' %}"></script>
+    <!-- Bootstrap Core Js -->
+    <script src="{% static 'node_modules/adminbsb/plugins/bootstrap/js/bootstrap.js' %}"></script>
+    <!-- Select Plugin Js -->
+    <script src="{% static 'node_modules/adminbsb/plugins/bootstrap-select/js/bootstrap-select.js' %}"></script>
+    <script src="{% static 'node_modules/adminbsb/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js' %}"></script>
 
-  <script src="{% static 'node_modules/adminbsb/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js' %}"></script>
+    <!-- Slimscroll Plugin Js -->
+    <script src="{% static 'node_modules/adminbsb/plugins/jquery-slimscroll/jquery.slimscroll.js' %}"></script>
+    <!-- Waves Effect Plugin Js -->
+    <script src="{% static 'node_modules/adminbsb/plugins/node-waves/waves.js' %}"></script>
 
-  <!-- Custom Js -->
-  <script src="{% static 'node_modules/adminbsb/js/admin.js' %}"></script>
+    <script src="{% static 'node_modules/adminbsb/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js' %}"></script>
+    <script src="{% static 'node_modules/adminbsb/plugins/sweetalert/sweetalert.min.js' %}"></script>
 
-  <!-- Demo Js -->
-  <script src="{% static 'node_modules/adminbsb/js/demo.js' %}"></script>
-  <!-- <script src="{% static 'node_modules/adminbsb/js/pages/forms/basic-form-elements.js' %}"></script> -->
-      <!-- <script src="{% static 'node_modules/adminbsb/plugins/jquery-inputmask/jquery.inputmask.bundle.js' %}"></script> -->
+
+    <!-- Custom Js -->
+    <script src="{% static 'node_modules/adminbsb/js/admin.js' %}"></script>
+    <!-- <script src="{% static 'node_modules/adminbsb/js/pages/ui/dialogs.js' %}"></script> -->
+    <script src="{% static 'ayoub/js/a_dialogs.js' %}"></script>
+
+    <!-- Demo Js -->
+    <script src="{% static 'node_modules/adminbsb/js/demo.js' %}"></script>
+    <!-- <script src="{% static 'node_modules/adminbsb/js/pages/forms/basic-form-elements.js' %}"></script> -->
+    <!-- <script src="{% static 'node_modules/adminbsb/plugins/jquery-inputmask/jquery.inputmask.bundle.js' %}"></script> -->
 
 
   </div>
 
   <script>
     // display service description of medayor as a mark
-      $(document).ready(function() {
-        $('.description-markdown').each(function() {
-          var content  = $(this).text()
-          var markedContent = marked(content)
-          // console.log(markedContent)
-          $(this).html(markedContent)
-        })
+    $(document).ready(function() {
+      $('.description-markdown').each(function() {
+        var content = $(this).text()
+        var markedContent = marked(content)
+        // console.log(markedContent)
+        $(this).html(markedContent)
       })
+    })
   </script>
+
 </body>
 
 </html>
