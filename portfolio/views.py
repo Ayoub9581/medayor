@@ -4,6 +4,7 @@ from .models import Project
 from .forms import ProjectForm
 from django.conf import settings
 from django.contrib.auth import get_user_model
+from accounts.models import Team
 
 User = get_user_model()
 
@@ -12,14 +13,20 @@ User = get_user_model()
 
 def index(request):
     projects = Project.objects.all()
-    context = {'projects':projects}
-    return render(request,'portfolio/index.html',context)
+    teams = Team.objects.team()
+    context = {
+    'projects':projects,
+    'teams':teams,
+    }
+    return render(request,'portfolio/home.html',context)
 
 def launch(request):
+    teams = Team.objects.team()
+    context = {'teams':teams}
     if request.user.is_anonymous:
         return render(request,'portfolio/launch.html')
     else:
-        return render(request,'portfolio/index.html')
+        return render(request,'portfolio/home.html',context)
 
 def projects(request):
     # projects = Project.objects.all()

@@ -317,7 +317,24 @@
   </div>
 </section>
 
+<section class="section--center mdl-grid site-max-width homepage-portfolio">
+  <a class="mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect mdl-button--accent"
+   href="#">Équipe de MEDAYOR</a>
+</section>
+<section class="section--center mdl-grid site-max-width">
+  {% for team in teams %}
+  <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+      <span class="mdl-list__item-primary-content">
+          <img src="{{team.team_user_image.url}}">
+        </span>
+    </div>
+  <div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+    <h5>{{team.full_name}}</h5>
+      {{team.mission}}
+  </div>
 
+  {% endfor %}
+</section>
 
 <div class="homepage-footer">
   <section class="mdl-grid site-max-width">
