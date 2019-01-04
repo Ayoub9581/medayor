@@ -24,7 +24,7 @@ def launch(request):
     teams = Team.objects.team()
     context = {'teams':teams}
     if request.user.is_anonymous:
-        return render(request,'portfolio/launch.html')
+        return render(request,'portfolio/launch.html',context)
     else:
         return render(request,'portfolio/home.html',context)
 
