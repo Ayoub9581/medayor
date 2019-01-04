@@ -9,8 +9,6 @@ from accounts.models import Team
 User = get_user_model()
 
 
-
-
 def index(request):
     projects = Project.objects.all()
     teams = Team.objects.team()
@@ -20,13 +18,13 @@ def index(request):
     }
     return render(request,'portfolio/home.html',context)
 
-def launch(request):
-    teams = Team.objects.team()
-    context = {'teams':teams}
-    if request.user.is_anonymous:
-        return render(request,'portfolio/launch.html',context)
-    else:
-        return render(request,'portfolio/home.html',context)
+# def launch(request):
+#     teams = Team.objects.team()
+#     context = {'teams':teams}
+#     if request.user.is_anonymous:
+#         return render(request,'portfolio/launch.html')
+#     else:
+#         return render(request,'portfolio/home.html',context)
 
 def projects(request):
     # projects = Project.objects.all()
