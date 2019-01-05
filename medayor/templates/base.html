@@ -15,12 +15,11 @@
 
   <link href="{% static 'styles/main.css' %}" rel="stylesheet">
   <link href="{% static 'node_modules/adminbsb/plugins/bootstrap/css/bootstrap.css' %}" rel="stylesheet">
-
   <!-- Waves Effect Css -->
   <link href="{% static 'node_modules/adminbsb/plugins/node-waves/waves.css' %}" rel="stylesheet" />
   <!-- Animation Css -->
   <link href="{% static 'node_modules/adminbsb/plugins/animate-css/animate.css' %}" rel="stylesheet" />
-  <link href="{% static 'node_modules/adminbsb/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css' %}" rel="stylesheet" />
+  <!-- <link href="{% static 'node_modules/adminbsb/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css' %}" rel="stylesheet" /> -->
   <link href="{% static 'node_modules/adminbsb/plugins/sweetalert/sweetalert.css' %}" rel="stylesheet" />
   <link href="{% static 'styles/main1.css' %}" rel="stylesheet">
 
@@ -46,20 +45,27 @@
 
 
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-    <a href="{% url 'contact' %}" id="contact-button" class="mdl-button mdl-button--fab mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast mdl-shadow--4dp"><i class="material-icons">mail</i></a>
+    <a href="{% url 'contact' %}" id="contact-button"
+     class="mdl-button mdl-button--fab mdl-js-button mdl-button--raised
+     mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast mdl-shadow--4dp">
+      <i class="material-icons">mail</i></a>
     <header class="mdl-layout__header mdl-layout__header--waterfall site-header portfolio-header">
       <div class="mdl-layout__header-row site-logo-row"><span class="mdl-layout__title">
           <div class="site-logo"></div><span class="site-description">MEDAYOR</span>
         </span></div>
+
       <div class="mdl-layout__header-row site-navigation-row mdl-layout--large-screen-only">
+        
         <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
           <a class="mdl-navigation__link" href="{% url 'home' %}">Acceuil</a>
           <a class="mdl-navigation__link" href="{% url 'services' %}">Services</a>
           <!-- <a class="mdl-navigation__link" href="about.html">About</a> -->
           <a class="mdl-navigation__link" href="{% url 'contact' %}">Contact</a>
           <a class="mdl-navigation__link" href="{% url 'projects' %}">projets</a>
+
         </nav>
       </div>
+
     </header>
     <div class="mdl-layout__drawer mdl-layout--small-screen-only">
       <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
@@ -118,14 +124,19 @@
     <script src="{% static 'node_modules/adminbsb/plugins/jquery-slimscroll/jquery.slimscroll.js' %}"></script>
     <!-- Waves Effect Plugin Js -->
     <script src="{% static 'node_modules/adminbsb/plugins/node-waves/waves.js' %}"></script>
+    <script src="{% static 'node_modules/adminbsb/plugins/ckeditor/ckeditor.js' %}"></script>
+    <script src="{% static 'node_modules/adminbsb/plugins/tinymce/tinymce.js' %}"></script>
 
-    <script src="{% static 'node_modules/adminbsb/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js' %}"></script>
+
+
+    <!-- <script src="{% static 'node_modules/adminbsb/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js' %}"></script>
+
     <script src="{% static 'node_modules/adminbsb/plugins/sweetalert/sweetalert.min.js' %}"></script>
-
+ -->
 
     <!-- Custom Js -->
     <script src="{% static 'node_modules/adminbsb/js/admin.js' %}"></script>
-    <!-- <script src="{% static 'node_modules/adminbsb/js/pages/ui/dialogs.js' %}"></script> -->
+    <script src="{% static 'node_modules/adminbsb/js/pages/forms/editors.js' %}"></script>
     <script src="{% static 'ayoub/js/a_dialogs.js' %}"></script>
 
     <!-- Demo Js -->
@@ -139,10 +150,11 @@
   <script>
     // display service description of medayor as a mark
     $(document).ready(function() {
-      $('.description-markdown').each(function() {
+      $('.content-markdown').each(function() {
         var content = $(this).text()
+        console.log(content)
         var markedContent = marked(content)
-        // console.log(markedContent)
+        console.log(markedContent)
         $(this).html(markedContent)
       })
     })

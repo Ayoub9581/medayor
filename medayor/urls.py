@@ -12,5 +12,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('portfolio.urls')),
     path('services/', include('services.urls')),
-    path('contact/',contact_view.send_contact ,name='contact')
+    path('contact/',contact_view.send_contact ,name='contact'),
+    path('accounts/', include('accounts.urls')),
+
 ] + static(settings.MEDIA_URL , document_root= settings.MEDIA_ROOT)

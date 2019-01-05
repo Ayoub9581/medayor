@@ -5,6 +5,7 @@ from . import views
 
 urlpatterns = [
     path('',views.services_home, name='services'),
-    path('services/create',views.add_service, name='createservice'),
+    path('service/create',views.add_service, name='createservice'),
     path('service/<slug:slug>/',views.service_detail, name='detail'),
+    path('service/update/<slug:slug>',views.edit_service, name='update'),
 ]

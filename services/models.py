@@ -4,6 +4,9 @@ from django.utils.text import slugify
 from domains.models import Domain
 from django.conf import settings
 from django.urls import reverse
+from markdown_deux import  markdown
+from django.utils.safestring import mark_safe
+
 
 
 def service_directory_path(instance, filename):
@@ -35,6 +38,11 @@ class Service(models.Model):
 
     def get_absolute_url(self):
         return reverse("detail", kwargs={"slug": self.slug})
+
+    def get_markdown(self):
+        content = self.description_service
+        markdown_text = markdown(content)
+        return mark_safe(markdown_text)
 
 
 def pre_save_service(sender, instance, *args, **kwargs):

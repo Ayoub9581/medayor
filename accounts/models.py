@@ -4,7 +4,6 @@ from django.db.models.signals import post_save
 from django.conf import settings
 from django.core.validators import RegexValidator
 # from django.contrib.gis.utils import GeoIP
-# Create your models here.
 
 USERNAME_REGEX = '^[a-zA-Z0-9.@+-]*$'
 
