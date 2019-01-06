@@ -30,7 +30,7 @@
         <img class="article-image" src="{{service.image_service.url}}" border="0" alt="">
       </div>
       <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">{{service.nom_service}}</h2>
+        <h2 class="mdl-card__title-text">{{service.nom_service|upper}}</h2>
       </div>
       <div class="mdl-card__supporting-text">
         <p class="description-markdown"> {{service.description_service|safe|lower|linebreaks|truncatechars:120}}
