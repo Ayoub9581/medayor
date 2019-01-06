@@ -9,6 +9,7 @@ html, body {
 .portfolio-header {
   position: relative;
   background-color: #673AB7;
+  background-image: url('../img/header-bg.jpg');
 }
 
 .site-header {
@@ -239,6 +240,13 @@ footer .mdl-logo a {
 
 .my-card__media {
   background: url("../img/laptop.jpg") center/cover;
+}
+
+.mdl-demo section .section__circle-container > .section__circle-container__circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 32px;
+  margin: 8px 0;
 }
 
 .mdl-demo section.section--footer .section__circle--big {

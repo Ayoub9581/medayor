@@ -7,5 +7,5 @@ urlpatterns = [
     path('',views.services_home, name='services'),
     path('service/create',views.add_service, name='createservice'),
     path('service/<slug:slug>/',views.service_detail, name='detail'),
-    path('service/update/<slug:slug>',views.edit_service, name='update'),
+    path('service/update/<int:id>',views.edit_service, name='update_service'),
 ]

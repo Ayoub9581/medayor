@@ -38,18 +38,13 @@ def service_detail(request,slug):
     return render(request,'services/servicedetail.html',context)
 
 @login_required(login_url='/accounts/login')
-def edit_service(request,slug=None):
-    instance = get_object_or_404(Service, slug=slug)
-    if not request.user.is_admin:
-        raise Http404
-    form = ServiceForm(request.POST or None , request.FILES or None, instance=instance)
+def edit_service(request , id=None):
+    obj = get_object_or_404(Service , id=id)
+    form  = ServiceForm(request.POST or None, instance=obj)
+    context  = {'form':form }
     if form.is_valid():
-        instance = form.save(commit=False)
-        instance.save()
-        return redirect(instance.get_absolute_url())
-    context = {
-        'form':form,
-        'instance':instance.nom_service
-    }
+        obj = form.save(commit=False)
+        obj.save()
+        return redirect('home')
 
-    return render(request,'services/create_service.html',context)
+    return render(request,'services/update_service.html',context)
