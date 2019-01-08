@@ -9,8 +9,8 @@ html, body {
 .portfolio-header {
   position: relative;
   background-color: #673AB7;
-  background-image: url('../img/header-bg.jpg');
 }
+
 
 .site-header {
   position: relative;
