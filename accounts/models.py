@@ -66,9 +66,6 @@ def profile_directory_path(instance, filename):
     return 'profile_{0}/{1}'.format(instance.user.id, filename)
 
 
-
-
-
 class TeamManager(models.Manager):
     def team(self, *args, **kwargs):
         return super(TeamManager, self).filter(is_team=True)

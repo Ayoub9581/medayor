@@ -19,3 +19,8 @@ div.breadcrumbs {
 .module h2, .module caption, .inline-group h2 {
     background: #673AB7;
 }
+
+.button, input[type=submit],input[type=button], .submit-row input, a.button {
+  background: #673AB7;
+  color: #FFF;
+}
