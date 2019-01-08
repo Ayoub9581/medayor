@@ -45,8 +45,7 @@
 
 
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-    <a href="{% url 'contact' %}" id="contact-button"
-     class="mdl-button mdl-button--fab mdl-js-button mdl-button--raised
+    <a href="{% url 'contact' %}" id="contact-button" class="mdl-button mdl-button--fab mdl-js-button mdl-button--raised
      mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast mdl-shadow--4dp">
       <i class="material-icons">mail</i></a>
     <header class="mdl-layout__header mdl-layout__header--waterfall site-header portfolio-header">
@@ -111,33 +110,22 @@
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 
     <script src="{% static 'node_modules/adminbsb/plugins/jquery/jquery.min.js' %}"></script>
-    <script src="{% static 'node_modules/marked/marked.min.js' %}"></script>
-    <script src="{% static 'node_modules/adminbsb/plugins/bootstrap-notify/bootstrap-notify.js' %}"></script>
-
     <!-- Bootstrap Core Js -->
     <script src="{% static 'node_modules/adminbsb/plugins/bootstrap/js/bootstrap.js' %}"></script>
     <!-- Select Plugin Js -->
     <script src="{% static 'node_modules/adminbsb/plugins/bootstrap-select/js/bootstrap-select.js' %}"></script>
-    <script src="{% static 'node_modules/adminbsb/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js' %}"></script>
-
     <!-- Slimscroll Plugin Js -->
     <script src="{% static 'node_modules/adminbsb/plugins/jquery-slimscroll/jquery.slimscroll.js' %}"></script>
+    <script src="{% static 'node_modules/adminbsb/plugins/bootstrap-notify/bootstrap-notify.js' %}"></script>
+
     <!-- Waves Effect Plugin Js -->
     <script src="{% static 'node_modules/adminbsb/plugins/node-waves/waves.js' %}"></script>
     <script src="{% static 'node_modules/adminbsb/plugins/ckeditor/ckeditor.js' %}"></script>
-    <script src="{% static 'node_modules/adminbsb/plugins/tinymce/tinymce.js' %}"></script>
-
-
-
-    <!-- <script src="{% static 'node_modules/adminbsb/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js' %}"></script>
-
-    <script src="{% static 'node_modules/adminbsb/plugins/sweetalert/sweetalert.min.js' %}"></script>
- -->
 
     <!-- Custom Js -->
     <script src="{% static 'node_modules/adminbsb/js/admin.js' %}"></script>
-    <script src="{% static 'node_modules/adminbsb/js/pages/forms/editors.js' %}"></script>
-    <script src="{% static 'ayoub/js/a_dialogs.js' %}"></script>
+    <script src="{% static 'node_modules/adminbsb/js/pages/ui/modals.js' %}"></script>
+    <!-- <script src="{% static 'node_modules/adminbsb/js/pages/forms/editors.js' %}"></script> -->
 
     <!-- Demo Js -->
     <script src="{% static 'node_modules/adminbsb/js/demo.js' %}"></script>
@@ -147,7 +135,7 @@
 
   </div>
 
-  <script>
+  <!-- <script>
     // display service description of medayor as a mark
     $(document).ready(function() {
       $('.content-markdown').each(function() {
@@ -159,6 +147,7 @@
       })
     })
   </script>
+ -->
 
 </body>
 
