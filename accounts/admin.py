@@ -31,8 +31,17 @@ class UserAdmin(BaseUserAdmin):
     ordering = ('username', 'email',)
     filter_horizontal = ()
 
+
+class TeamAdmin(admin.ModelAdmin):
+    list_display = ('id','user','mission','is_team')
+    list_display_links = ('id','mission')
+    list_filter = ('mission',)
+    list_editable = ('is_team', )
+    search_fields= ('mission',)
+
+
 admin.site.register(MyUser, UserAdmin)
-admin.site.register(Team)
+admin.site.register(Team, TeamAdmin)
 # admin.site.register(Profile)
 # ... and, since we're not using Django's built-in permissions,
 # unregister the Group model from admin.
