@@ -8,11 +8,13 @@
       <div class="mdl-card__title">
         <h1 class="mdl-card__title-text">Services</h1>
         {% if user.is_authenticated and request.user.is_admin %}
-        <a href="{% url 'createservice' %}"> <button class="mdl-button mdl-js-button mdl-button--raised bg-deep-purple" type="submit" style="margin-left:600px">
+        <!-- <a href="{% url 'createservice' %}">
+          <button class="mdl-button
+          mdl-js-button mdl-button--raised bg-deep-purple" type="submit" style="margin-left:600px">
             <i class="material-icons">add</i>
-            <!-- Envoyer -->
+            <!-- Envoyer 
           </button>
-          <a>
+          <a> -->
             {% endif %}
       </div>
       <div class="mdl-card__media"><img class="article-image" src="{% static 'img/medayor/service.png' %}" border="0" alt="About">
