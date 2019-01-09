@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 
 
 def services_home(request):
-    services = Service.objects.all()
+    services = Service.objects.active()
     context = {
         'services':services,
     }

@@ -15,6 +15,9 @@ def service_directory_path(instance, filename):
     return 'service_{0}/{1}'.format(instance.nom_service, filename)
 
 
+class ServiceManager(models.Manager):
+    def active(self, *args, **kwyargs):
+        return super(ServiceManager, self).filter(is_draft=True)
 
 class Service(models.Model):
     nom_service         = models.CharField(max_length=255, unique=True)
@@ -27,6 +30,7 @@ class Service(models.Model):
     timestamp =      models.DateTimeField(auto_now=False, auto_now_add=True)
 
 
+    objects = ServiceManager()
     def __str__(self):
         return self.nom_service
 
